@@ -1,5 +1,31 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Saung IQRO</title>
+  <meta name="description" content="Free Bootstrap 4 Template by uicookies.com">
+  <meta name="keywords" content="Free website templates, Free bootstrap themes, Free template, Free bootstrap, Free website template">
+
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600|Montserrat:200,300,400" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="assets/fonts/ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/fonts/law-icons/font/flaticon.css">
+
+  <link rel="stylesheet" href="assets/fonts/fontawesome/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="assets/css/slick.css">
+  <link rel="stylesheet" href="assets/css/slick-theme.css">
+
+  <link rel="stylesheet" href="assets/css/helpers.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/landing-2.css">
+</head>
 <style>
-    -webkit-box-sizing:border-box;
+
+.body {
+  -webkit-box-sizing:border-box;
 -moz-box-sizing:border-box;
 -ms-box-sizing:border-box;
 -o-box-sizing:border-box;
@@ -8,24 +34,20 @@ outline:none;
 margin:0;
 padding:0;
 }
+
 .whatsapp-btn {
 cursor:pointer;
 position:fixed;
-bottom:90px;
-right:90px;
-display:block;
-width:90px;
-height:90px;
-border-radius:90px;
-text-indent:-9999px;
-background:#fff url(https://lh3.googleusercontent.com/-evFtor-f_w8/W4pfajfP17I/AAAAAAAAE9E/f7H52hrT5UoY4ZqdkxSGh2ZftYrH8fiDwCLcBGAs/s300/Whatsapp.png) no-repeat center center;
-background-size:50% auto;
-box-shadow:0 20px 25px rgba(0,0,0,.05);
-transition:.2s;
+
 }
 .whatsapp-btn:active {
 bottom:35px;
+-webkit-box-shadow: none !important;
+box-shadow: none !important;
+outline: none !important; 
 }
+
+
 #whatsapp {
 position:fixed;
 z-index:+100;
@@ -72,7 +94,6 @@ text-decoration:none;
 display:block;
 border:1px solid #21811a;
 box-shadow:inset 0 2px 5px #ffffff00;
-width:100%;
 padding:15px;
 border-radius:2px;
 }
@@ -90,37 +111,34 @@ resize: none;
 #whatsapp a {
 cursor:pointer;
 display:block;
-padding:10px;
-font-weight:bold;
-text-align:center;
-background:#25D366;
-color:white;
-border-radius:2px;
+
 }
 #whatsapp a:hover {
-background:#20b558;
+
       }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<div id="whatsapp" class="toggle">
-    <input class="tujuan" type="hidden" value="081224221110" /> <!-- No. WhatsApp -->
-        
-        <label>Nama : 
-            <input class="nama" type="text" placeholder="Tulis Nama Lengkap." />
-        </label>
-        <label>Alamat :
-            <input class="alamat" type="alamat" placeholder="contoh : Jl.Tamansari I RT 002/008 No.1 Kel.Pekayon Kec.Ps Rebo Jak Tim." />
-        </label>    
-        <label>Nomor telepon :
-            <input class="nomor" type="nomor" placeholder="contoh : 082225204112.." />
-        </label>
-        <label>Jumlah order / paket :
-            <textarea class="pesan" placeholder="contoh: 1 paket mainan pintar ebook.."></textarea>
-        </label>
-
-    <a class="submit">> KIRIM WHATSAPP</a>
-
+<div id="whatsapp" class="toggle col-md-5">
+  <form class="bg-white rounded pb_form_v1">
+    <h2 class="mb-4 mt-0 text-center">Daftar Ngaji Online</h2>
+      <input class="tujuan" type="hidden" value="081224221110" /> <!-- No. WhatsApp -->
+      <div class="form-group">
+            <input class="nama form-control py-3 reverse" type="text" placeholder="Nama Lengkap" />
+      </div>
+      <div class="form-group">
+            <input class="alamat form-control py-3 reverse" type="alamat" placeholder="Alamat" />
+      </div>
+      <div>
+           <input class="nomor form-control py-3 reverse" type="nomor" placeholder="Nomer WhatsApp" />
+      </div>
+      <div class="form-group">
+            <textarea class="pesan form-control py-3 reverse" placeholder="Program Ngaji"></textarea>
+      </div> 
+      <div class="form-group"> 
+        <a class="submit btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">> KIRIM WHATSAPP</a>
+      </div>
+  </form>
 </div>
 
 <script>

@@ -21,44 +21,48 @@
   <link rel="stylesheet" href="assets/css/helpers.css">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/landing-2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body data-spy="scroll" data-target="#pb-navbar" data-offset="200">
- <div id="whatsapp" class="col-md-5 toggle">
-             <form action="#" class="bg-white rounded pb_form_v1">
-              <h2 class="mb-4 mt-0 text-center">Daftar Ngaji Online</h2>
-              <div class="form-group">
-                <input type="text" class="nama form-control py-3 reverse" placeholder="Full name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="alamat form-control py-3 reverse" placeholder="Alamat">
-              </div>
-              <div class="form-group">
-                <input type="text" class="usia form-control py-3 reverse" placeholder="Usia">
-              </div>
-              <div class="form-group">
+ <div id="whatsapp" class="toggle col-md-5">
+    <form class="bg-white rounded pb_form_v1">
+      <h2 class="mb-4 mt-0 text-center">Daftar Ngaji Online</h2>
+        <input class="tujuan" type="hidden" value="081224221110" /> <!-- No. WhatsApp -->
+            <div class="form-group">
+              <input type="text" class="nama form-control py-3 reverse" placeholder="Full name">
+            </div>
+              
+            <div class="form-group">
+              <input type="text" class="alamat form-control py-3 reverse" placeholder="Alamat">
+            </div>
+              
+            <div class="form-group">
+              <input type="text" class="usia form-control py-3 reverse" placeholder="Usia">
+            </div>
+              
+            <div class="form-group">
                 <div class="pb_select-wrap">
-                  <select class="form-control pb_height-50 reverse">
-                    <option value="" selected>Program Ngaji</option>
-                    <option value="">IQRO</option>
-                    <option value="">Tahsin</option>
-                    <option value="">Tahfidz</option>
-                    <option value="">Bahasa Arab</option>
+                  <select class="programngaji form-control pb_height-50 reverse">
+                    <option selected disabled>Pilih Program Ngaji</option>
+                    <option value="IQRO">IQRO</option>
+                    <option value="Tahsin">Tahsin</option>
+                    <option value="Tahfidz">Tahfidz</option>
+                    <option value="Bahasa Arab">Bahasa Arab</option>
                   </select>
                 </div>
-              </div>
-              <div id="whatsapp" class="form-group">
-                <input type="submit" class="submit btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Register">
-                
-              </div>
-            </form>
-          </div>
+            </div>
+
+            <div class="form-group">
+              <a class="submit btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue">Register</a>
+            </div>
+    </form>
+  </div>
 
 </body>          
 
 
 <script>
   //no wa admin
-  $("#noAdmin").val("081224221110");
   $('.whatsapp-btn').click(function(){
     $('#whatsapp').toggleClass('toggle');
   });
@@ -81,15 +85,15 @@
     alert('Silahkan tulis ' + ph);
     $('#whatsapp .alamat').focus();
     return false;
-  } else if ($('#whatsapp .nomor').val() == '') { // Cek Nomor
-    ph = $('#whatsapp .nomor').attr('placeholder');
+  } else if ($('#whatsapp .usia').val() == '') { // Cek Usia
+    ph = $('#whatsapp .usia').attr('placeholder');
     alert('Silahkan tulis ' + ph);
-    $('#whatsapp .nomor').focus();
+    $('#whatsapp .usia').focus();
     return false;
-  } else if ($('#whatsapp .pesan').val() == '') { // Cek Pesan
-    ph = $('#whatsapp .pesan').attr('placeholder');
+  } else if ($('#whatsapp .programngaji option:selected').val() == '') { // Cek Program Ngaji
+    ph = $('#whatsapp .programngaji').attr('placeholder');
     alert('Silahkan tulis ' + ph);
-    $('#whatsapp .pesan').focus();
+    $('#whatsapp .programngaji').focus();
     return false;
   } else {
     if (!confirm("Kirim Ke WhatsApp?")) {
@@ -105,9 +109,9 @@
                 via_url = location.href,
                 nama = $('#whatsapp .nama').val(),
                 alamat = $('#whatsapp .alamat').val(),
-                nomor = $('#whatsapp .nomor').val(),
-                pesan = $('#whatsapp .pesan').val();
-        $(this).attr('href', url_wa + '?phone=62 ' + tujuan + '&text=Assalammualaikum Ustadz, saya *' + nama + '* %0A%0AAlamat:%20' + alamat +' %0A%0ANo.tlp:%20'+ nomor + ' %0A%0APaket:%20' + pesan + '%0A%0AMohon dibantu untuk mengaji online-nya ya Ustadz');
+                usia = $('#whatsapp .usia').val(),
+                programngaji= $('#whatsapp .programngaji option:selected').val();
+        $(this).attr('href', url_wa + '?phone=62 ' + tujuan + '&text=Assalammualaikum Ustadz, saya *' + nama + '* %0A%0AAlamat:%20' + alamat +' %0A%0AUsia:%20'+ usia + ' %0A%0AProgram%20Ngaji:%20' + programngaji + '%0A%0AMohon dibantu untuk mengaji online-nya ya Ustadz');
         var w = 960,
                 h = 540,
                 left = Number((screen.width / 2) - (w / 2)),
@@ -119,3 +123,4 @@
   }
   }
   </script>
+  
